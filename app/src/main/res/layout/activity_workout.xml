@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WorkoutActivity"
+    android:fillViewport="true"
+    android:background="@color/black">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="1"
+        android:columnCount="1"
+        android:layout_margin="15dp"
+        android:alignmentMode="alignMargins"
+        android:layout_gravity="center_horizontal"
+        android:columnOrderPreserved="false"
+        android:background="@color/black">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/grey"
+            android:layout_margin="10dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:background="@color/grey"
+                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/exerciseicon"
+                    android:background="@color/grey"
+                    android:id="@+id/ImageProfile"
+                    android:layout_marginTop="50dp">
+                </ImageView>
+                <TextView
+                    android:id="@+id/TVProfileHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Workouts"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:textSize="30sp"
+                    android:background="@color/grey"/>
+
+                <TextView
+                    android:id="@+id/TVMorningHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Morning Workout of the Week!"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/grey"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/TVMorningWorkout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:layout_below="@+id/TVMorningHeading"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/grey"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/TVEveningHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="Evening Workout of the Week!"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/TVMorningWorkout"
+                    android:background="@color/grey"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/TVEveningWorkout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:layout_below="@+id/TVEveningHeading"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/grey"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+
+</ScrollView>

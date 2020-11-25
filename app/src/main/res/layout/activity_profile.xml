@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:background="@color/black"
+    android:fillViewport="true"
+    >
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:alignmentMode="alignMargins"
+        android:background="@color/black"
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:rowCount="2">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/grey"
+            android:layout_margin="15dp"
+            android:id="@+id/BtnCardProfile"
+            android:clickable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/grey"
+            >
+            <ImageView
+                android:id="@+id/ImageProfile"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="50dp"
+                android:background="@color/grey"
+                android:src="@drawable/profile">
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Welcome to your Profile!"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:layout_marginBottom="20dp">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Basic Information:"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:layout_marginBottom="20dp">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Current Height:"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/TVProfileCurrentHeight"
+                >
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Goal Height:"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/TVProfileGoalHeight">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Current Weight:"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/TVProfileCurrentWeight">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Goal Weight:"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/TVProfileGoalWeight">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Calorie Allowance:"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/TVProfileCalorieAllowance">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Calories Left:"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/TVProfileCaloriesLeft">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Measurement System:"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/TVProfileMeasure">
+            </TextView>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:text="EDIT PROFILE"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:id="@+id/BtnLaunchEditProfile"></Button>
+
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:clickable="true"
+            app:cardBackgroundColor="@color/grey"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grey"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:text="Graphs!"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="30sp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:text="Weight Progress!"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/BarGraphWeight"
+                    >
+                </com.github.mikephil.charting.charts.BarChart>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:text="Current Weight vs. Goal Weight in Kilo's (first two), followed by Current Weight vs. Goal Weight in Pounds (last two). Please bare in mind that these are rounded off values!"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="10sp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:text="Height Progress!"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/BarGraphHeight"
+                    >
+                </com.github.mikephil.charting.charts.BarChart>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:text="Current Height vs. Goal Height in cm's (first two), followed by Current Height vs. Goal Height in Feet (last two). Please bare in mind that these are rounded off values!"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="10sp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:text="Calorie Intake!"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/BarGraphCalorie"
+                    >
+                </com.github.mikephil.charting.charts.BarChart>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:text="First, Breakfast Calories. Second, Lunch Calories. Third, Dinner Calories. Fourth, Exercise Calories. Fifth, Total Intake. Sixth, Calorie Allowance. Seventh, Calories Left"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="10sp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="15dp"
+            app:cardBackgroundColor="@color/grey"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grey"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:textSize="25sp"
+                    android:text="Upload Meal Image"
+                    ></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:text="Click on the Cloud to Upload!"
+                    ></TextView>
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cloudicon"
+                    android:text="Upload"
+                    android:id="@+id/BtnLaunchUpload"></ImageButton>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="15dp"
+            app:cardBackgroundColor="@color/grey"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grey"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:id="@+id/LinearLay">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:textSize="25sp"
+                    android:text="Weight Logs"
+                    ></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:text="All your previous Weight Logs!"
+                    android:layout_marginBottom="10dp"
+                    >
+                </TextView>
+            </LinearLayout>
+            </ScrollView>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+</ScrollView>

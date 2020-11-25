@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecipeActivity"
+    android:background="@color/black"
+    android:fillViewport="true">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="1"
+        android:columnCount="1"
+        android:layout_margin="15dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/black">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/grey"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="30dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:background="@color/grey"
+                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/recipesicon"
+                    android:background="@color/grey"
+                    android:id="@+id/ImageProfile"
+                    android:layout_marginTop="50dp">
+                </ImageView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RECIPES"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:background="@color/grey"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/TVBreakfastHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Breakfast of the Week!"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/grey"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/TVBreakfast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/TVBreakfastHeading"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="15dp"
+                    android:background="@color/grey"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/BreakfastProgress">
+                </ProgressBar>
+
+                <TextView
+                    android:id="@+id/TVLunchHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lunch of the Week!"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/TVBreakfast"
+                    android:background="@color/grey"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/TVLunch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:layout_below="@+id/TVLunchHeading"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/grey"
+                    android:textColor="@color/black"/>
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LunchProgress">
+                </ProgressBar>
+
+                <TextView
+                    android:id="@+id/TVDinnerHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dinner of the Week!"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/TVLunch"
+                    android:background="@color/grey"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/TVDinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:layout_below="@+id/TVDinnerHeading"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/grey"
+                    android:textColor="@color/black"/>
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/DinnerProgress"
+                    android:layout_marginBottom="50dp">
+                </ProgressBar>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+</ScrollView>

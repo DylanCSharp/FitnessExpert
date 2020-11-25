@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "828856691962",
+    "firebase_url": "https://fitness-expert-database.firebaseio.com",
+    "project_id": "fitness-expert-database",
+    "storage_bucket": "fitness-expert-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828856691962:android:6d7a92e292dc319234ed43",
+        "android_client_info": {
+          "package_name": "com.iiedbn.fitnessexpert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828856691962-ceuv1vki0fs7oq5eljq1um1d9io9od3r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4Jd-j886Zfpp37TLyQpwa-eBrGTeHjbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828856691962-ceuv1vki0fs7oq5eljq1um1d9io9od3r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

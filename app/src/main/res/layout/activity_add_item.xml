@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddItemActivity"
+    android:background="@color/black"
+    android:fillViewport="true">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:alignmentMode="alignMargins"
+        android:background="@color/black"
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:rowCount="1">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:clickable="true"
+        app:cardBackgroundColor="@color/grey"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ImageProfile"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/grey"
+        android:src="@drawable/addicon"></ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:text="Quick Add!"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Breakfast:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"
+            />
+
+        <EditText
+            android:layout_width="225dp"
+            android:layout_height="40dp"
+            android:background="@color/whitesmoke"
+            android:hint="Enter Total Calories..."
+            android:textColorHint="@color/black"
+            android:textAlignment="center"
+            android:layout_margin="10dp"
+            android:id="@+id/ETAddBreakfast"
+            android:inputType="number"
+            android:textColor="@color/black"
+            ></EditText>
+
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Lunch:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"
+            />
+
+        <EditText
+            android:layout_width="225dp"
+            android:layout_height="40dp"
+            android:background="@color/whitesmoke"
+            android:hint="Enter Total Calories..."
+            android:textColorHint="@color/black"
+            android:textAlignment="center"
+            android:layout_margin="10dp"
+            android:id="@+id/ETAddLunch"
+            android:inputType="number"
+            android:textColor="@color/black"
+            ></EditText>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Dinner:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"
+            />
+
+        <EditText
+            android:layout_width="225dp"
+            android:layout_height="40dp"
+            android:background="@color/whitesmoke"
+            android:hint="Enter Total Calories..."
+            android:textColorHint="@color/black"
+            android:textAlignment="center"
+            android:layout_margin="10dp"
+            android:id="@+id/ETAddDinner"
+            android:inputType="number"
+            android:textColor="@color/black"
+            ></EditText>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Exercise:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"
+            />
+
+        <EditText
+            android:layout_width="225dp"
+            android:layout_height="40dp"
+            android:background="@color/whitesmoke"
+            android:hint="Enter Calories Burnt..."
+            android:textColorHint="@color/black"
+            android:textAlignment="center"
+            android:layout_margin="10dp"
+            android:id="@+id/ETAddExercise"
+            android:inputType="number"
+            android:textColor="@color/black"
+            ></EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="FINISH AND ADD ALL"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"
+            />
+        <ImageView
+            android:id="@+id/IconAddAll"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@color/grey"
+            android:src="@drawable/adddiary"
+            android:clickable="true"
+            android:onClick="addingItem"
+            android:layout_marginBottom="30dp"
+            ></ImageView>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </GridLayout>
+</ScrollView>

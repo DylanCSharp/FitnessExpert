@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadImage"
+    android:background="@color/black"
+    android:fillViewport="true">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="1"
+        android:columnCount="1"
+        android:layout_margin="20dp"
+        android:alignmentMode="alignMargins"
+        android:layout_gravity="center_horizontal"
+        android:columnOrderPreserved="false"
+        android:background="@color/black">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/grey"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:id="@+id/BtnCardProfile"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:background="@color/grey"
+                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/cloudicon"
+                    android:background="@color/grey"
+                    android:id="@+id/ImageProfile"
+                    android:layout_marginTop="50dp">
+                </ImageView>
+                <TextView
+                    android:id="@+id/UploadHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upload to Cloud"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:background="@color/grey"
+                    />
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Use Camera"
+                    android:id="@+id/BtnCamera"
+                    android:background="@color/black"
+                    />
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="Choose File"
+                    android:id="@+id/BtnChooseImage"
+                    android:background="@color/black"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/ETFileNme"
+                    android:hint="Custom Name for Image"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/whitesmoke"
+                    />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_below="@+id/ETFileNme"
+                    android:id="@+id/ImageView"
+                    android:background="@color/grey"
+                    android:layout_margin="20dp"/>
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Image"
+                    android:id="@+id/BtnUploadImage"
+                    android:layout_below="@+id/ImageView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="30dp"
+                    android:background="@color/black"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+</ScrollView>
