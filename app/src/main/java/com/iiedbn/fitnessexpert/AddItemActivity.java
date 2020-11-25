@@ -42,10 +42,12 @@ public class AddItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
 
+        //getting the instances from firestore so that we can use them
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
 
+        //instantiating the variables
         Breakfast = findViewById(R.id.ETAddBreakfast);
         Lunch = findViewById(R.id.ETAddLunch);
         Dinner = findViewById(R.id.ETAddDinner);
@@ -53,6 +55,7 @@ public class AddItemActivity extends AppCompatActivity {
         BtnAdd = findViewById(R.id.IconAddAll);
 
         try {
+            //Getting the calorie allowance so that we can use it to make calculations
             DocumentReference documentReference = fStore.collection("Users").document(userID);
             documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
                 @Override
@@ -71,14 +74,13 @@ public class AddItemActivity extends AppCompatActivity {
     public void addingItem(View view) {
 
         try {
-            //long millis = System.currentTimeMillis();
-            //java.sql.Date date = new java.sql.Date(millis);
-
+            //Getting when last they signed in and adding it to the document, so that we are able to reset the days
             long signedin2 = fAuth.getCurrentUser().getMetadata().getLastSignInTimestamp();
             SimpleDateFormat sdf2 = new SimpleDateFormat("dd");
 
             DocumentReference documentReference = fStore.collection("Users").document(userID);
 
+            //updating the fields in the document within firestore
             documentReference.update("Breakfast", Integer.parseInt(Breakfast.getText().toString()));
             documentReference.update("Lunch", Integer.parseInt(Lunch.getText().toString()));
             documentReference.update("Dinner", Integer.parseInt(Dinner.getText().toString()));
@@ -90,6 +92,7 @@ public class AddItemActivity extends AppCompatActivity {
             double dinner = Double.parseDouble(Dinner.getText().toString());
             double exercise = Double.parseDouble(Exercise.getText().toString());
 
+            //sending values to my calculations class which calculates calorie intake and calories left for the day
             Calculations calculations = new Calculations(breakfast, lunch, dinner, exercise, CalorieAllowance);
 
             documentReference.update("Total Intake", calculations.TotalIntake());

@@ -45,6 +45,7 @@ public class RecipeActivity extends AppCompatActivity {
 
         try {
             //Getting the document reference for recipes and then setting text views to the fields
+            //DISPLAYING ALL THE RECIPES
             fStore.collection("Recipe").document("FitnessExpert").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {

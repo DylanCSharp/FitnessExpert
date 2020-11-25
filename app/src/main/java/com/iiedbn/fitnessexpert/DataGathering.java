@@ -57,6 +57,7 @@ public class DataGathering extends AppCompatActivity {
         setContentView(R.layout.activity_data_gathering);
 
         try {
+            //Setting the array of sex's
             Sex = findViewById(R.id.SpinSex);
             List<String> gender = new ArrayList<>();
             String male = "Male";
@@ -71,6 +72,7 @@ public class DataGathering extends AppCompatActivity {
             Sex.setSelection(0);
 
 
+            //Setting the array of measurements
             Measurement = findViewById(R.id.SpinMeasurement);
             List<String> measurement = new ArrayList<>();
             String metric = "Metric";
@@ -86,6 +88,7 @@ public class DataGathering extends AppCompatActivity {
 
             String measure = Measurement.getSelectedItem().toString();
 
+            //Warns the user that metric is selected and they should enter materic values
             if (measure == "Metric") {
                 Toast.makeText(this, "Enter values in kilograms and centimeters, or choose Imperial to measure in pounds and inches", Toast.LENGTH_LONG).show();
             }
@@ -104,6 +107,7 @@ public class DataGathering extends AppCompatActivity {
         GoalHeight = findViewById(R.id.ETDataGoalHeight);
         SaveData = findViewById(R.id.BtnGatherData);
 
+        //Getting the firestore instances
         fStore = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();
         userID = fAuth.getCurrentUser().getUid();
@@ -118,6 +122,7 @@ public class DataGathering extends AppCompatActivity {
 
     public void createUserData() {
 
+        //Creating variables
         String first = FirstName.getText().toString();
         String surname = Surname.getText().toString();
         double calorieGoal = Integer.parseInt(CalorieGoal.getText().toString());
@@ -129,6 +134,7 @@ public class DataGathering extends AppCompatActivity {
         String measurementData = Measurement.getSelectedItem().toString();
 
         try {
+            //Making sure the user has entered values for all the fields
             if (TextUtils.isEmpty(first) || TextUtils.isEmpty(surname) || TextUtils.isEmpty(CalorieGoal.getText()) || TextUtils.isEmpty(CurrentWeight.getText()) || TextUtils.isEmpty(GoalWeight.getText()) || TextUtils.isEmpty(sex) || TextUtils.isEmpty(Height.getText()) || CalorieGoal.getText().toString() == "" || first == "" || surname == "" || GoalWeight.getText().toString() == "" || CurrentWeight.getText().toString() == "" || sex == "" || GoalHeight.getText().toString() == "") {
                 Toast.makeText(this, "Values need to be entered for all the fields above to continue!", Toast.LENGTH_SHORT).show();
                 return;
@@ -138,6 +144,8 @@ public class DataGathering extends AppCompatActivity {
                 user.put("Breakfast", 0);
                 user.put("Calorie Allowance", calorieGoal);
 
+                //If the user chooses metric, the right conversions are made for metric and imperial values
+                //Both imperial and metric values for the users data will be stored so these calculations convert according to what measurement system the user has chosen
                 if (measurementData == "Metric") {
                     double currentWeightMetric = Math.round(currentWeight);
                     double currentWeightImperial = Math.round(currentWeight * 2.2);
@@ -151,15 +159,20 @@ public class DataGathering extends AppCompatActivity {
                     double goalHeightMetric = Math.round(goalHeight);
                     double goalHeightImperial = Math.round((goalHeight * 3.28) / 100);
 
+                    //Adding the values to the map which will then be added to the document
                     user.put("Current Weight Metric", currentWeightMetric);
                     user.put("Goal Weight Metric", goalWeightMetric);
                     user.put("Height Metric", currentHeightMetric);
                     user.put("Goal Height Metric", goalHeightMetric);
 
+                    //Adding the values to the map which will then be added to the document
                     user.put("Current Weight Imperial", currentWeightImperial);
                     user.put("Goal Weight Imperial", goalWeightImperial);
                     user.put("Height Imperial", currentHeightImperial);
                     user.put("Goal Height Imperial", goalHeightImperial);
+
+                    //If the user chooses metric, the right conversions are made for metric and imperial values
+                    //Both imperial and metric values for the users data will be stored so these calculations convert according to what measurement system the user has chosen
                 } else if (measurementData == "Imperial") {
                     double currentWeightMetric = Math.round(currentWeight / 2.2);
                     double currentWeightImperial = Math.round(currentWeight);
@@ -173,17 +186,21 @@ public class DataGathering extends AppCompatActivity {
                     double goalHeightMetric = Math.round((goalHeight / 3.28) * 100);
                     double goalHeightImperial = Math.round((goalHeight));
 
+                    //Adding the values to the map which will then be added to the document
                     user.put("Current Weight Metric", currentWeightMetric);
                     user.put("Goal Weight Metric", goalWeightMetric);
                     user.put("Height Metric", currentHeightMetric);
                     user.put("Goal Height Metric", goalHeightMetric);
 
+                    //Adding the values to the map which will then be added to the document
                     user.put("Current Weight Imperial", currentWeightImperial);
                     user.put("Goal Weight Imperial", goalWeightImperial);
                     user.put("Height Imperial", currentHeightImperial);
                     user.put("Goal Height Imperial", goalHeightImperial);
                 }
 
+                //Adding the values to the map which will then be added to the document
+                //Also getting the current time and inserting it into the document
                 long signedin2 = fAuth.getCurrentUser().getMetadata().getLastSignInTimestamp();
                 SimpleDateFormat sdf2 = new SimpleDateFormat("dd");
                 user.put("Date", sdf2.format(signedin2));
@@ -216,6 +233,7 @@ public class DataGathering extends AppCompatActivity {
             Toast.makeText(this, "" + ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
+        //This next bit of code also adds values to the weight logs section so that the user can also view their weight logs
         long millis = System.currentTimeMillis();
         Date signedIn = new Date(millis);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -223,6 +241,7 @@ public class DataGathering extends AppCompatActivity {
         DocumentReference documentReference = fStore.collection("Weight Logs").document(userID);
         Map<String, Object> weightlogs = new HashMap<>();
 
+        //Makes different conversions depending on what the user has chosen
         if (measurementData == "Metric"){
 
             double currentWeightMetric = Math.round(currentWeight);
@@ -244,6 +263,7 @@ public class DataGathering extends AppCompatActivity {
                 }
             });
         }
+        //Makes different conversions depending on what the user has chosen
         else if (measurementData == "Imperial")
         {
             double currentWeightImperial = Math.round(currentWeight);

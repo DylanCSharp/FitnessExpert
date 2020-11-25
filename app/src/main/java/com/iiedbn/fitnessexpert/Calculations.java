@@ -35,12 +35,15 @@ public class Calculations {
     public double getCalorieAllowance() {
         return CalorieAllowance;
     }
+
+    //total intake for a given day
     public double TotalIntake()
     {
         double intake = getBreakfast() + getLunch() + getDinner();
         return intake;
     }
 
+    //getting how many calories are left for the day
     public double CaloriesLeft()
     {
         double caloriesLeft = (getCalorieAllowance() - TotalIntake()) + getExercise();

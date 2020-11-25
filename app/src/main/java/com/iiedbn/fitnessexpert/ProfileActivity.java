@@ -197,6 +197,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         try
         {
+            //CYCLING THROUGH THE ARRAYS WITHIN FIRESTORE AND DISPLAYING THEM IN TEXT VIEWS
             DocumentReference documentReference = fStore.collection("Users").document(userID);
             documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
                 @Override
@@ -211,6 +212,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                                     ArrayList listDate = (ArrayList) documentSnapshot.get("MetricLog");
 
+                                    //CYCLING THROUGH THE ARRAYS WITHIN FIRESTORE AND DISPLAYING THEM IN TEXT VIEWS
                                     for (int i = 0; i < listDate.size(); i++) {
                                         TextView value = new TextView(getApplicationContext());
                                         value.setText("Weight on " + listDate.get(i));
@@ -223,6 +225,7 @@ public class ProfileActivity extends AppCompatActivity {
                             }
                         });
                     }
+                    //CYCLING THROUGH THE ARRAYS WITHIN FIRESTORE AND DISPLAYING THEM IN TEXT VIEWS
                     else {
                         fStore.collection("Weight Logs").document(userID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                             @Override
@@ -232,6 +235,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                                     ArrayList listDate = (ArrayList) documentSnapshot.get("ImperialLog");
 
+                                    //CYCLING THROUGH THE ARRAYS WITHIN FIRESTORE AND DISPLAYING THEM IN TEXT VIEWS
                                     for (int i = 0; i < listDate.size(); i++) {
                                         TextView value = new TextView(getApplicationContext());
                                         value.setText("Weight on " + listDate.get(i));
@@ -253,6 +257,7 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
+    //STARTING NEW INTENTS
     public void editProfile()
     {
         startActivity(new Intent(getApplicationContext(), EditProfileActivity.class));

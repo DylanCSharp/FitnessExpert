@@ -49,11 +49,12 @@ public class MainActivity extends AppCompatActivity {
 
         try {
 
+            //This checks if the day is new and then resets all the calorie intakes back to 0 so that old data does not show up in a new days graph
             DocumentReference documentReference = fStore.collection("Users").document(userID);
             documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
                 @Override
                 public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-
+                    //This checks if the day is new and then resets all the calorie intakes back to 0 so that old data does not show up in a new days graph
                     boolean newDay;
                     long signedin = fAuth.getCurrentUser().getMetadata().getLastSignInTimestamp();
                     SimpleDateFormat sdf = new SimpleDateFormat("dd");
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Welcome Back " + value.getString("First Name") + "!", Toast.LENGTH_SHORT).show();
                         newDay = false;
                     } else {
+                        //This checks if the day is new and then resets all the calorie intakes back to 0 so that old data does not show up in a new days graph
                         newDay = true;
                         if (newDay) {
                             long signedin2 = fAuth.getCurrentUser().getMetadata().getLastSignInTimestamp();
@@ -88,8 +90,6 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(getApplicationContext(), "ERROR: " +ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
-
-
 
 
         try {

@@ -64,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void startRegister()
     {
+        //starting new intent
         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(intent);
     }
@@ -94,6 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Logged In Successfully!", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         finish();
+                        //The user has successfully logged in
                     } else {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         ProgressBarLogin.setVisibility(View.INVISIBLE);

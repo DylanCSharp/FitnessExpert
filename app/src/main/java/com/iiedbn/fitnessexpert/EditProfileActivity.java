@@ -122,12 +122,15 @@ public class EditProfileActivity extends AppCompatActivity {
 
         try
         {
+
             DocumentReference documentReference = fStore.collection("Users").document(userID);
 
+            //Makes sure the user has entered values
             if (TextUtils.isEmpty(first) || TextUtils.isEmpty(surname) || TextUtils.isEmpty(CalorieGoal.getText()) || TextUtils.isEmpty(CurrentWeight.getText()) || TextUtils.isEmpty(GoalWeight.getText()) || TextUtils.isEmpty(sex) || TextUtils.isEmpty(Height.getText()) || CalorieGoal.getText().toString() == "" || first == "" || surname == "" || GoalWeight.getText().toString() == "0" || CurrentWeight.getText().toString() == "0" || sex == "" || GoalHeight.getText().toString() == "0") {
                 Toast.makeText(this, "Values need to be entered for all the fields above to continue!", Toast.LENGTH_SHORT).show();
                 return;
             } else {
+                //Makes different conversions depending on what the user has chosen
                 if (measurementData == "Metric") {
                     double currentWeightMetric = Math.round(currentWeight);
                     double currentWeightImperial = Math.round(currentWeight * 2.2);
@@ -143,11 +146,13 @@ public class EditProfileActivity extends AppCompatActivity {
 
                     documentReference.update("Measurement System", measurementData);
 
+                    //updating the document depending on the fields
                     documentReference.update("Current Weight Metric", currentWeightMetric);
                     documentReference.update("Goal Weight Metric", goalWeightMetric);
                     documentReference.update("Height Metric", currentHeightMetric);
                     documentReference.update("Goal Height Metric", goalHeightMetric);
 
+                    //updating the document depending on the fields
                     documentReference.update("Current Weight Imperial", currentWeightImperial);
                     documentReference.update("Goal Weight Imperial", goalWeightImperial);
                     documentReference.update("Height Imperial", currentHeightImperial);
@@ -159,6 +164,7 @@ public class EditProfileActivity extends AppCompatActivity {
                         }
                     });
                     ;
+                    //Makes different conversions depending on what the user has chosen
                 } else if (measurementData == "Imperial") {
                     double currentWeightMetric = Math.round(currentWeight / 2.2);
                     double currentWeightImperial = Math.round(currentWeight);
@@ -174,11 +180,13 @@ public class EditProfileActivity extends AppCompatActivity {
 
                     documentReference.update("Measurement System", measurementData);
 
+                    //updating the document depending on the fields
                     documentReference.update("Current Weight Metric", currentWeightMetric);
                     documentReference.update("Goal Weight Metric", goalWeightMetric);
                     documentReference.update("Height Metric", currentHeightMetric);
                     documentReference.update("Goal Height Metric", goalHeightMetric);
 
+                    //updating the document depending on the fields
                     documentReference.update("Current Weight Imperial", currentWeightImperial);
                     documentReference.update("Goal Weight Imperial", goalWeightImperial);
                     documentReference.update("Height Imperial", currentHeightImperial);
@@ -198,6 +206,7 @@ public class EditProfileActivity extends AppCompatActivity {
             Toast.makeText(this, "" +ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
+        //Getting the current date and converting it to a format
         long millis = System.currentTimeMillis();
         Date signedIn = new Date(millis);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -206,6 +215,7 @@ public class EditProfileActivity extends AppCompatActivity {
             String addWeightMetric = "" + sdf.format(signedIn) + " was " + Math.round(currentWeight);
             String addWeightImperial = "" + sdf.format(signedIn) + " was " + Math.round(currentWeight * 2.2);
 
+            //updating the arrays that contain the weight logs
             DocumentReference documentReference = fStore.collection("Weight Logs").document(userID);
             documentReference.update("MetricLog", FieldValue.arrayUnion(addWeightMetric)).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
@@ -214,6 +224,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     finish();
                 }
             });
+            //updating the arrays that contain the weight logs
             DocumentReference documentReference2 = fStore.collection("Weight Logs").document(userID);
             documentReference2.update("ImperialLog", FieldValue.arrayUnion(addWeightImperial)).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
@@ -226,6 +237,7 @@ public class EditProfileActivity extends AppCompatActivity {
             String addWeightMetric = "" + sdf.format(signedIn) + " was " + Math.round(currentWeight / 2.2);
             String addWeightImperial = "" + sdf.format(signedIn) + " was " + Math.round(currentWeight);
 
+            //updating the arrays that contain the weight logs
             DocumentReference documentReference = fStore.collection("Weight Logs").document(userID);
             documentReference.update("MetricLog", FieldValue.arrayUnion(addWeightMetric)).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
@@ -234,6 +246,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     finish();
                 }
             });
+            //updating the arrays that contain the weight logs
             DocumentReference documentReference2 = fStore.collection("Weight Logs").document(userID);
             documentReference2.update("ImperialLog", FieldValue.arrayUnion(addWeightImperial)).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
